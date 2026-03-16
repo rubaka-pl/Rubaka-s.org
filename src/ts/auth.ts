@@ -78,7 +78,10 @@ async function signInWithPassword(email: string, password: string): Promise<void
 async function signUp(email: string, password: string): Promise<void> {
   const { error } = await supabase.auth.signUp({
     email,
-    password
+    password,
+    options: {
+      emailRedirectTo: getRedirectUrl('pages/login.html')
+    }
   });
 
   if (error) {
