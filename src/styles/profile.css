@@ -1,0 +1,267 @@
+.profile-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 20px 40px;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: rgba(18, 18, 18, 0.9);
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.profile-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 20px;
+}
+
+.profile-hero-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.profile-avatar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-avatar-icon {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  display: block;
+}
+
+.profile-avatar-icon::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.profile-avatar-icon::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 14px;
+  border-radius: 14px 14px 8px 8px;
+  background: #fff;
+}
+
+.profile-title {
+  margin: 0 0 8px;
+  font-size: 2rem;
+}
+
+.profile-email,
+.profile-joined {
+  margin: 0;
+  opacity: 0.8;
+}
+
+.profile-hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.card-header h2 {
+  margin: 0 0 16px;
+  font-size: 1.4rem;
+}
+
+.xp-top-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.xp-level-box {
+  min-width: 110px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 14px;
+  text-align: center;
+}
+
+.xp-level-label {
+  display: block;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-bottom: 6px;
+}
+
+.xp-level-value {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.xp-main-text,
+.xp-sub-text {
+  margin: 0;
+}
+
+.xp-sub-text {
+  opacity: 0.75;
+  margin-top: 6px;
+}
+
+.xp-bar {
+  width: 100%;
+  height: 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  margin-top: 18px;
+}
+
+.xp-bar-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #58d66b 0%, #e7d45f 100%);
+  transition: width 0.3s ease;
+}
+
+.stats-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.stat-item {
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.stat-label {
+  display: block;
+  opacity: 0.75;
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.nickname-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nickname-form input {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+}
+
+.recent-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.recent-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.recent-item-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.recent-game-title {
+  font-weight: 700;
+}
+
+.recent-game-meta {
+  font-size: 0.92rem;
+  opacity: 0.75;
+}
+
+.recent-item a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.empty-state {
+  opacity: 0.7;
+  margin: 0;
+}
+
+.daily-checkin-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.daily-checkin-text {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 22px;
+}
+
+.daily-checkin-status {
+  font-size: 18px;
+  line-height: 1.4;
+  opacity: 0.95;
+  user-select: none;
+}

@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+:root {
+  --bg-1: #17610e;
+  --bg-2: #12867d;
+  --bg-3: #4e836e;
+
+  --text: #f8fafc;
+  --text-soft: #e9edf3;
+
+  --accent: #63c2c2; /* Голубой неон */
+  --accent-2: #35a3d6; /* Синий */
+  --accent-3: #0cfdfd; /* Розовый неон для деталей */
+
+  --card-border: rgba(236, 226, 226, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Share Tech Mono', monospace;
+}
+html,
+body {
+  font-family: 'Share Tech Mono', monospace;
+}

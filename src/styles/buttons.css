@@ -1,0 +1,62 @@
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  background: linear-gradient(
+    to bottom,
+    var(--accent) 0%,
+    var(--accent-2) 100%
+  );
+  color: #fff;
+  border: 3px solid var(--text);
+  padding: 12px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.5),
+    inset 0 2px 5px rgba(255, 255, 255, 0.7);
+  text-shadow: 1px 1px 2px #000;
+}
+
+.btn:hover {
+  background: linear-gradient(
+    to bottom,
+    var(--accent-2) 0%,
+    var(--accent) 100%
+  );
+  transform: translateY(-2px);
+}
+
+.btn-blue {
+  background: linear-gradient(
+    to bottom,
+    var(--text) 0%,
+    var(--accent) 100%
+  ) !important;
+}
+.red-btn {
+  background: red !important;
+  color: #fff;
+}
+#daily-checkin-btn:disabled {
+  background: linear-gradient(180deg, #7a7a7a 0%, #5f5f5f 100%);
+  border-color: #7a7a7a;
+  color: #ececec;
+  cursor: default;
+  pointer-events: none;
+  box-shadow: none;
+  transform: none;
+  transition: none;
+  animation: none;
+  opacity: 1;
+}
+
+#daily-checkin-btn:disabled:hover {
+  background: #6f6f6f;
+  border-color: #6f6f6f;
+  color: #d9d9d9;
+  box-shadow: none;
+  transform: none;
+}

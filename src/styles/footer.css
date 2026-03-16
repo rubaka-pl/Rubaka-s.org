@@ -1,0 +1,146 @@
+/* footer */
+.site-footer {
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(57, 255, 20, 0.06),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(0, 229, 168, 0.06),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #09130f, #0c1814 45%, #10201a 100%);
+  color: var(--text);
+  padding: 70px 40px 25px;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(57, 255, 20, 0.15);
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  justify-items: end;
+  grid-template-columns: minmax(400px, 300px) repeat(3, 2fr);
+  gap: 10px;
+}
+
+.brand-head {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.brand-logo {
+  width: 95px;
+  height: 95px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 12px var(--accent));
+}
+
+.brand-head h2 {
+  font-size: 36px;
+  margin: 0;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brand-sub {
+  font-size: 14px;
+  color: var(--text-soft);
+}
+
+.brand-text {
+  margin-top: 8px;
+  line-height: 1.6;
+  color: var(--text-soft);
+  font-size: 14px;
+}
+
+.socials {
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+}
+
+.socials a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent-2), var(--accent));
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  transition: 0.25s;
+}
+
+.socials a:hover {
+  transform: scale(1.2) rotate(-5deg);
+  box-shadow: 0 0 15px var(--accent-2);
+}
+
+.footer-links h4 {
+  margin-bottom: 14px;
+  font-size: 1.5rem;
+  color: var(--text);
+}
+
+.footer-links a {
+  display: block;
+  margin: 8px 0;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: 0.25s;
+}
+.footer-links a,
+.brand-sub,
+.brand-text {
+  color: var(--text-soft);
+}
+.footer-links a:hover {
+  color: var(--accent-2);
+}
+.footer-links a:hover {
+  color: var(--accent);
+  transform: translateX(6px);
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 40px auto 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-email {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: var(--bg-1);
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+@keyframes footerGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

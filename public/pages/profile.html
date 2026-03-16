@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile | Rubaka's.org</title>
+    <link id="page_favicon" href="../assets//favicon.svg" rel="icon" type="image/x-icon">
+    <link rel="stylesheet" href="/src/styles/main.css" />
+    <link rel="stylesheet" href="/src/styles/auth.css" />
+    <link rel="stylesheet" href="/src/styles/profile.css" />
+</head>
+
+<body>
+    <main class="profile-page">
+        <section class="profile-hero card">
+            <div class="profile-hero-left">
+                <div class="profile-avatar-wrapper">
+                    <div class="profile-avatar">
+                        <img id="profile-avatar-image" src='../../public/assets/avatar.png' alt=" Profile avatar" />
+                    </div>
+
+                    <input id="avatar-input" type="file" accept="image/png,image/jpeg,image/webp,image/gif" hidden />
+                    <button id="change-avatar-btn" class="btn" type="button">Change avatar</button>
+                </div>
+
+                <div class="profile-identity">
+                    <h1 id="profile-nickname" class="profile-title">Loading...</h1>
+                    <p id="profile-email" class="profile-email">Loading...</p>
+                    <p id="profile-joined" class="profile-joined">Joined —</p>
+                </div>
+            </div>
+
+            <div class="profile-hero-actions">
+                <button id="logout-btn" class="btn auth-submit-btn red-btn" type="button">Logout</button>
+                <a href="/index.html" class="auth-back-lin btn logout-btn">Back to Home</a>
+            </div>
+        </section>
+
+        <section class="profile-grid">
+            <div class="card xp-card">
+                <div class="card-header">
+                    <h2>Level Progress</h2>
+                </div>
+
+                <div class="xp-top-row">
+                    <div class="xp-level-box">
+                        <span class="xp-level-label">Level</span>
+                        <span id="profile-level" class="xp-level-value">1</span>
+                    </div>
+
+                    <div class="xp-info">
+                        <p id="profile-total-xp" class="xp-main-text">0 XP</p>
+                        <p id="profile-next-level" class="xp-sub-text">0 XP to next level</p>
+                    </div>
+                </div>
+
+                <div class="xp-bar">
+                    <div id="xp-bar-fill" class="xp-bar-fill"></div>
+                </div>
+            </div>
+
+            <div class="card stats-card">
+                <div class="card-header">
+                    <h2>Stats</h2>
+                </div>
+
+                <div class="stats-list">
+                    <div class="stat-item">
+                        <span class="stat-label">Time played</span>
+                        <span id="stat-time-played" class="stat-value">0 min</span>
+                    </div>
+
+                    <div class="stat-item">
+                        <span class="stat-label">Games played</span>
+                        <span id="stat-games-played" class="stat-value">0</span>
+                    </div>
+
+                    <div class="stat-item">
+                        <span class="stat-label">Current streak</span>
+                        <span id="stat-current-streak" class="stat-value">0</span>
+                    </div>
+
+                    <div class="stat-item">
+                        <span class="stat-label">Longest streak</span>
+                        <span id="stat-longest-streak" class="stat-value">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card nickname-card">
+                <div class="card-header">
+                    <h2>Profile Settings</h2>
+                </div>
+
+                <form id="nickname-form" class="nickname-form">
+                    <label for="nickname-input">Nickname</label>
+                    <input id="nickname-input" type="text" placeholder="Enter nickname" maxlength="24" />
+                    <button type="submit" class="btn auth-submit-btn">Save nickname</button>
+                </form>
+
+            </div>
+
+            <div class="card recent-card">
+                <div class="card-header">
+                    <h2>Recent Activity</h2>
+                </div>
+
+                <div id="recent-activity-list" class="recent-list">
+                    <p class="empty-state">No recent activity yet.</p>
+                </div>
+            </div>
+
+            <div class="card played-card">
+                <div class="card-header">
+                    <h2>Most Played Games</h2>
+                </div>
+
+                <div id="top-games-list" class="recent-list">
+                    <p class="empty-state">No game stats yet.</p>
+                </div>
+            </div>
+            <div class="card daily-card">
+                <div class="card-header">
+                    <h2>Daily Check-in</h2>
+                </div>
+
+                <div class="daily-checkin-box">
+                    <p class="daily-checkin-text">
+                        Claim your daily streak and bonus XP once per day, even if you do not launch a game.
+                    </p>
+
+                    <div class="daily-checkin-status" id="daily-checkin-status">
+                        Ready to claim today’s reward.
+                    </div>
+
+                    <button id="daily-checkin-btn" class="btn auth-submit-btn" type="button">
+                        Claim Daily Streak
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer class="site-footer">
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                <div class="brand-head">
+                    <img src="/assets/logo.png" class="brand-logo">
+                    <div>
+                        <h2>Rubaka`s</h2>
+                        <span class="brand-sub">Unblocked Games Portal</span>
+                    </div>
+                </div>
+
+                <p class="brand-text">
+                    Rubaka`s.org hosts a growing collection of browser games you can play
+                    directly in your browser. No installs, no downloads — just open and play.
+                </p>
+
+                <div class="socials">
+                    <a href="#">🎮</a>
+                    <a href="#">💬</a>
+                    <a href="#">📺</a>
+                    <a href="#">🐸</a>
+                </div>
+            </div>
+
+
+
+            <div class="footer-links">
+
+
+
+                <a href="/public/pages/profile.html">Profile</a>
+            </div>
+
+
+
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <a href="/public/pages/terms.html">📜 Terms of Service</a>
+                <a href="/public/pages/privacy.html">🔒 Privacy Policy</a>
+                <a href="/public/pages/dmca.html">⚖️ DMCA Takedown</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 Rubaka`s.org</span>
+            <a class="footer-email">shapovalov.pr@gmail.com</a>
+        </div>
+    </footer>
+    <script type="module" src="/src/ts/profile.ts"></script>
+</body>
+
+</html>

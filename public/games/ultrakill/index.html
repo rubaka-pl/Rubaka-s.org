@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Unity WebGL Player | ULTRAKILL WEB PORT</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #231F20;
+    }
+
+    #unity-canvas {
+      display: block;
+      width: 100vw !important;
+      height: 100vh !important;
+      background: #231F20;
+    }
+
+    :fullscreen #unity-canvas {
+      width: 100vw !important;
+      height: 100vh !important;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="unity-canvas"></canvas>
+
+  <script src="Build/ultrakill.loader.js"></script>
+  <script>
+    const canvas = document.querySelector("#unity-canvas");
+
+    function resizeCanvas() {
+      canvas.style.width = window.innerWidth + "px";
+      canvas.style.height = window.innerHeight + "px";
+    }
+
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      var meta = document.createElement('meta');
+      meta.name = 'viewport';
+      meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+      document.head.appendChild(meta);
+    }
+
+    createUnityInstance(canvas, {
+      dataUrl: "Build/ultrakill.data.unityweb",
+      frameworkUrl: "Build/ultrakill.framework.js.unityweb",
+      codeUrl: "Build/ultrakill.wasm.unityweb",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "Hakita",
+      productName: "ULTRAKILL WEB PORT",
+      productVersion: "1.5",
+      matchWebGLToCanvasSize: true
+    });
+
+    window.addEventListener("resize", resizeCanvas);
+    document.addEventListener("fullscreenchange", resizeCanvas);
+
+    resizeCanvas();
+  </script>
+</body>
+
+</html>
