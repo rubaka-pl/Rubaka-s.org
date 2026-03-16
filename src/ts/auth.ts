@@ -45,7 +45,6 @@ function setMode(mode: AuthMode): void {
 }
 
 async function signInWithGoogle(): Promise<void> {
-  // ИСПРАВЛЕНО: Теперь редирект будет на правильный URL профиля
   const redirectTo = getRedirectUrl('pages/profile.html');
 
   const { error } = await supabase.auth.signInWithOAuth({
@@ -89,7 +88,7 @@ async function signUp(email: string, password: string): Promise<void> {
     return;
   }
 
-  setMessage('Account created. Check your email if confirmation is enabled.', 'success');
+  setMessage('Account created.', 'success');
 }
 
 async function redirectIfLoggedIn(): Promise<void> {
