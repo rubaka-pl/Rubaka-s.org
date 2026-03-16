@@ -2,6 +2,9 @@
 
 Rubaka's.org is a browser-based gaming platform built with Vite, TypeScript, and Supabase.  
 The site allows users to launch HTML5/browser games directly in an iframe, track play sessions, earn XP, maintain a daily streak, and view profile statistics.
+<img width="677" height="744" alt="image" src="https://github.com/user-attachments/assets/4e6d10aa-5ad6-4008-b73a-0b6283f9ded5" />
+<img width="1058" height="819" alt="image" src="https://github.com/user-attachments/assets/7d4a286c-2e88-4c1a-95a8-f545d5e84bfe" />
+<img width="1908" height="909" alt="image" src="https://github.com/user-attachments/assets/56f21c49-fa5c-4717-adef-d05d03543375" />
 
 ## Features
 
