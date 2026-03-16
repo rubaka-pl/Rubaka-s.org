@@ -118,12 +118,15 @@ document.addEventListener('DOMContentLoaded', () => {
     games.forEach((game) => {
       const card = document.createElement('div');
       const sizeClass: GameSize = game.size ?? 'small';
-
       card.classList.add('game-card', sizeClass);
+
+      const thumbUrl = game.thumbnail.startsWith('http') 
+        ? game.thumbnail 
+        : (import.meta.env.BASE_URL + game.thumbnail).replace(/\/+/g, '/');
 
       card.innerHTML = `
         <div class="app-icon-image-wrapper">
-          <img src="${game.thumbnail}" alt="${game.title}" loading="lazy" />
+          <img src="${thumbUrl}" alt="${game.title}" loading="lazy" />
           <div class="card-overlay">
             <h3>${game.title}</h3>
           </div>
@@ -242,7 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
     gameListSection.classList.add('hidden');
     gamePlayerSection.classList.remove('hidden');
 
-const nextUrl = `./index.html?game=${encodeURIComponent(game.slug)}`;
+    const nextUrl = `${window.location.origin}${import.meta.env.BASE_URL}index.html?game=${encodeURIComponent(game.slug)}`;
     window.history.replaceState({}, '', nextUrl);
 
     currentSessionId = await startCurrentUserGameSession(game, currentSessionStartedAt);
@@ -290,8 +293,8 @@ const nextUrl = `./index.html?game=${encodeURIComponent(game.slug)}`;
     gamePlayerSection.classList.add('hidden');
     gameListSection.classList.remove('hidden');
 
-    window.history.replaceState({}, '', '/index.html');
-  };
+    window.history.replaceState({}, '', `${window.location.origin}${import.meta.env.BASE_URL}index.html`);  };
+
 
   backButton.addEventListener('click', () => {
     void closeGame();

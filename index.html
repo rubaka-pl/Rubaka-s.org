@@ -4,19 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link id="page_favicon" href="/assets/favicon.svg" rel="icon" type="image/x-icon">
+    <link id="page_favicon" href="assets/favicon.svg" rel="icon" type="image/x-icon">
     <title>Awesome Unblocked Games!</title>
     <link rel="stylesheet" href="./src/styles/main.css">
     <link rel="stylesheet" href="./src/styles/footer.css">
-
 </head>
 
 <body>
-
     <header id="main-header">
-        <!--<div class="logo">
-            <a href="/"><img src="/assets/logo.png" alt=""></a>
-        </div> -->
         <div class="category-filters filters-row">
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="shooter">Shooters</button>
@@ -26,10 +21,9 @@
             <button class="filter-btn" data-filter="arcade">Arcade</button>
         </div>
 
-
         <div id="auth-slot">
             <div class="header-user">
-                <a href="/profile.html" class="header-user-link" title="shapovalov.pr@gmail.com">
+                <a href="./pages/profile.html" class="header-user-link">
                     <span class="header-user-icon"></span>
                     <span class="header-user-text">Your profile</span>
                 </a>
@@ -44,65 +38,44 @@
     <section id="game-player-section" class="container hidden">
         <div class="glossy-panel">
             <div class="controls-row">
-                <button id="back-button" class="btn">Back to Games</button> <button id="fullscreen-btn"
-                    class="btn btn-blue">📺 Fullscreen</button>
+                <button id="back-button" class="btn">Back to Games</button>
+                <button id="fullscreen-btn" class="btn btn-blue">📺 Fullscreen</button>
             </div>
-
             <h2 id="current-game-title">Game Title</h2>
-
             <div class="iframe-container" id="iframe-container">
                 <div id="close-fs" class="close-fullscreen">×</div>
             </div>
-
             <div id="current-game-info" class="game-info"></div>
         </div>
     </section>
 
     <footer class="site-footer">
         <div class="footer-container">
-
             <div class="footer-brand">
                 <div class="brand-head">
-                    <img src="/assets/logo.png" class="brand-logo">
+                    <img src="./assets/logo.png" class="brand-logo">
                     <div>
                         <h2>Rubaka`s</h2>
                         <span class="brand-sub">Unblocked Games Portal</span>
                     </div>
                 </div>
-
                 <p class="brand-text">
-                    Rubaka`s.org hosts a growing collection of browser games you can play
-                    directly in your browser. No installs, no downloads — just open and play.
+                    Rubaka`s.org hosts a growing collection of browser games. No installs, no downloads.
                 </p>
-
-                <div class="socials">
-                    <a href="#">🎮</a>
-                    <a href="#">💬</a>
-                    <a href="#">📺</a>
-                    <a href="#">🐸</a>
-                </div>
             </div>
-
-
 
             <div class="footer-links">
-
-
-
-                <a href="./profile.html">Profile</a>
+                <a href="./pages/profile.html">Profile</a>
+                <a href="./pages/login.html">Login</a>
             </div>
-
-
 
             <div class="footer-links">
                 <h4>Legal</h4>
-                <a href="./terms.html">📜 Terms of Service</a>
-                <a href="./privacy.html">🔒 Privacy Policy</a>
-                <a href="./dmca.html">⚖️ DMCA Takedown</a>
+                <a href="./pages/terms.html">📜 Terms of Service</a>
+                <a href="./pages/privacy.html">🔒 Privacy Policy</a>
+                <a href="./pages/dmca.html">⚖️ DMCA Takedown</a>
             </div>
-
         </div>
-
         <div class="footer-bottom">
             <span>© 2026 Rubaka`s.org</span>
             <a class="footer-email">shapovalov.pr@gmail.com</a>

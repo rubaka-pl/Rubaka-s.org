@@ -11,6 +11,15 @@ const signupForm = document.getElementById('signup-form') as HTMLFormElement | n
 const showSignupBtn = document.getElementById('show-signup-btn') as HTMLButtonElement | null;
 const showLoginBtn = document.getElementById('show-login-btn') as HTMLButtonElement | null;
 
+// Универсальный хелпер для получения правильного пути
+// Он объединит домен + /Rubaka-s.org/ + нужную страницу
+const getRedirectUrl = (path: string) => {
+  const baseUrl = import.meta.env.BASE_URL; // Это возьмет '/Rubaka-s.org/' из vite.config.ts
+  const origin = window.location.origin;
+  // Убираем лишние слеши при склейке
+  return `${origin}${baseUrl}${path}`.replace(/\/+/g, '/').replace(':/', '://');
+};
+
 function setMessage(message: string, type: 'error' | 'success' | 'info' = 'info'): void {
   if (!authMessage) return;
   authMessage.textContent = message;
@@ -36,7 +45,8 @@ function setMode(mode: AuthMode): void {
 }
 
 async function signInWithGoogle(): Promise<void> {
-  const redirectTo = `${window.location.origin}/profile.html`;
+  // ИСПРАВЛЕНО: Теперь редирект будет на правильный URL профиля
+  const redirectTo = getRedirectUrl('pages/profile.html');
 
   const { error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
@@ -61,7 +71,8 @@ async function signInWithPassword(email: string, password: string): Promise<void
     return;
   }
 
-  window.location.href = '/pages/profile.html';
+  // ИСПРАВЛЕНО: Переход после логина
+  window.location.href = getRedirectUrl('pages/profile.html');
 }
 
 async function signUp(email: string, password: string): Promise<void> {
@@ -87,7 +98,8 @@ async function redirectIfLoggedIn(): Promise<void> {
   }
 
   if (data.session) {
-    window.location.href = '/pages/profile.html';
+    // ИСПРАВЛЕНО: Редирект, если уже залогинен
+    window.location.href = getRedirectUrl('pages/profile.html');
   }
 }
 

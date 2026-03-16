@@ -63,9 +63,11 @@ const dailyCheckinStatus = document.getElementById('daily-checkin-status') as HT
 
 const AVATAR_BUCKET = 'avatars';
 const MAX_AVATAR_SIZE_MB = 2;
-const DEFAULT_AVATAR_URL = '/assets/avatar.png';
-const RECENT_ACTIVITY_LIMIT = 3;
+const baseUrl = import.meta.env.BASE_URL; // '/Rubaka-s.org/'
+const DEFAULT_AVATAR_URL = `${baseUrl}assets/avatar.png`.replace(/\/+/g, '/');
 
+const RECENT_ACTIVITY_LIMIT = 3;
+const getPath = (page: string) => `${baseUrl}${page}`.replace(/\/+/g, '/');
 function getTodayUtcDate(): string {
   return new Date().toISOString().split('T')[0];
 }
@@ -144,7 +146,7 @@ async function loadProfile(): Promise<string | null> {
   const { data, error } = await supabase.auth.getUser();
 
   if (error || !data.user) {
-    window.location.href = '/login.html';
+  window.location.href = getPath('pages/login.html');
     return null;
   }
 
@@ -173,7 +175,7 @@ async function loadProfile(): Promise<string | null> {
   if (profileJoined) profileJoined.textContent = `Joined ${formatDate(joinedAt)}`;
   if (nicknameInput) nicknameInput.value = profileData?.nickname ?? '';
 
-  if (profileAvatarImage) {
+if (profileAvatarImage) {
     profileAvatarImage.src = avatarUrl
       ? `${avatarUrl}${avatarUrl.includes('?') ? '&' : '?'}t=${Date.now()}`
       : DEFAULT_AVATAR_URL;
@@ -228,7 +230,7 @@ async function loadRecentActivity(userId: string): Promise<void> {
           Played ${formatDuration(row.duration_seconds ?? 0)} • ${formatDate(row.started_at)}${row.ended_at ? '' : ' • Playing now'}
         </span>
       </div>
-      <a href="/index.html?game=${encodeURIComponent(row.game_slug)}" class="btn">Open</a>
+<a href="${getPath('index.html')}?game=${encodeURIComponent(row.game_slug)}" class="btn">Open</a>
     </div>
   `).join('');
 }
@@ -269,8 +271,7 @@ async function loadTopGames(userId: string): Promise<void> {
             <span class="recent-game-title">${row.game_title}</span>
             <span class="recent-game-meta">${formatDuration(row.total_seconds ?? 0)} • ${row.sessions_count} sessions</span>
           </div>
-          <a href="/index.html?game=${encodeURIComponent(row.game_slug)}" class="btn">Open</a>
-        </div>
+<a href="${getPath('index.html')}?game=${encodeURIComponent(row.game_slug)}" class="btn">Open</a>        </div>
       `;
     })
     .join('');
@@ -408,7 +409,7 @@ async function claimDailyCheckin(): Promise<void> {
 
 async function logout(): Promise<void> {
   await supabase.auth.signOut();
-  window.location.href = '/login.html';
+window.location.href = getPath('pages/login.html');
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
