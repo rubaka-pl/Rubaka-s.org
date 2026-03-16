@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/rubakas-org/',
+  base: '/Rubaka-s.org/',
   build: {
     rollupOptions: {
       input: {
