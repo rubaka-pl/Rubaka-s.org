@@ -408,7 +408,7 @@ async function claimDailyCheckin(): Promise<void> {
 
 async function logout(): Promise<void> {
   await supabase.auth.signOut();
-  window.location.href = '/pages/login.html';
+  window.location.href = '/rubakas-org/pages/login.html';
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
