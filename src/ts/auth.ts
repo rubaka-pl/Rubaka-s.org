@@ -36,7 +36,7 @@ function setMode(mode: AuthMode): void {
 }
 
 async function signInWithGoogle(): Promise<void> {
-  const redirectTo = `${window.location.origin}/rubakas-org/pages/profile.html`;
+  const redirectTo = `${window.location.origin}./pages/profile.html`;
 
   const { error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
