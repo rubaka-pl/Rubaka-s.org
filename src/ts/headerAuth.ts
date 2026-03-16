@@ -15,7 +15,7 @@ export async function renderHeaderAuth(): Promise<void> {
 
   if (!session?.user) {
     authSlot.innerHTML = `
-      <a href="./pages/login.html" class="header-login-link">Login</a>
+      <a href="/login.html" class="header-login-link">Login</a>
     `;
     return;
   }
@@ -24,7 +24,7 @@ export async function renderHeaderAuth(): Promise<void> {
 
   authSlot.innerHTML = `
   <div class="header-user">
-    <a href="./pages/profile.html" class="header-user-link" title="${email}">
+    <a href="/profile.html" class="header-user-link" title="${email}">
       <span class="header-user-icon"></span>
       <span class="header-user-text">Your profile</span>
     </a>
