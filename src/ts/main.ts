@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
     gameListSection.classList.add('hidden');
     gamePlayerSection.classList.remove('hidden');
 
-    const nextUrl = `/index.html?game=${encodeURIComponent(game.slug)}`;
+const nextUrl = `./index.html?game=${encodeURIComponent(game.slug)}`;
     window.history.replaceState({}, '', nextUrl);
 
     currentSessionId = await startCurrentUserGameSession(game, currentSessionStartedAt);
