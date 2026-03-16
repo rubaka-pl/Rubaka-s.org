@@ -144,7 +144,7 @@ async function loadProfile(): Promise<string | null> {
   const { data, error } = await supabase.auth.getUser();
 
   if (error || !data.user) {
-    window.location.href = '/pages/login.html';
+    window.location.href = '/rubakas-org/pages/login.html';
     return null;
   }
 
